@@ -1,3 +1,58 @@
-<% @reddit.each do |red| %>
-  <a href='<%=red.href%>'><%=red.title%></a><%= red.time %><br>
-<% end %>
+<div class='row'>
+  <div class='col-md-offset-6'>
+    <h1 class='time'></h1>
+  </div>
+  <div class='col-mdoffset-10'>
+    <% @weather.each do |w| %>
+      <%= w %> 
+    <% end %>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-md-6'>
+    <div role="tabpanel">
+      <h1>Reddit Feeds</h1>
+      <div class='space-10'></div>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#sf" aria-controls="sf" role="tab" data-toggle="tab">San Francisco</a></li>
+        <li role="presentation"><a href="#sb" aria-controls="sb" role="tab" data-toggle="tab">Santa Barbara</a></li>
+        <li role="presentation"><a href="#nba" aria-controls="nba" role="tab" data-toggle="tab">NBA</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="sf">
+          <h3><%= @redditsf.first.sub %></h3>
+          <% @redditsf.each do |red| %>
+            <a href='<%=red.href%>'><%=red.title%></a> - <%= red.time %><br>
+            <div class='space-10'></div>
+          <% end %>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="sb">
+          <h3><%= @redditsb.first.sub %></h3>
+          <% @redditsb.each do |red| %>
+            <a href='<%=red.href%>'><%=red.title%></a> - <%= red.time %><br>
+            <div class='space-10'></div>
+          <% end %>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="nba">
+          <h3><%= @redditnba.first.sub %></h3>
+          <% @redditnba.each do |red| %>
+            <a href='<%=red.href%>'><%=red.title%></a> - <%= red.time %><br>
+            <div class='space-10'></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-6'>
+  <h1>Reuters</h1>
+  <div class='space-10'></div>
+  <% @reuters.each do |r| %>
+    <a href='<%=r.link%>'><%=r.title%></a>
+    <div class='space-10'></div>
+  <% end %>
+  </div>
+</div>

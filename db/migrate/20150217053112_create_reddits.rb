@@ -5,7 +5,7 @@ class CreateReddits < ActiveRecord::Migration
       t.string :href
       t.string :domain
       t.string :time
-      t.timestamps null: false
+      t.string :sub
       t.timestamps null: false
     end
   end
