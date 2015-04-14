@@ -1,0 +1,32 @@
+$(document).ready(function(){
+  var stuff = "url(<%= asset_path '11.jpg' %>)";
+  // console.log(stuff);
+  // var img = new Image();
+  // img.onload = function(){
+  //   $('.initialLoad').css("background-image",stuff);
+  // };
+  // img = stuff;
+  $('.initialLoad').css("background-image",'url(<%= asset_path "#{rand(1...13)}.jpg"%>)').lazyload();
+  loadAnimations();
+  clickLoadAnimations();
+  slideDownImage();
+})
+
+function loadAnimations(){
+  setTimeout (function(){ $('.initialLoad').slideUp('slow', function(){}) }, 4000);
+}
+
+function clickLoadAnimations(){
+  $('.initialLoad').click(function(){
+    $('.initialLoad').slideUp('slow', function(){});
+  })
+}
+
+function slideDownImage(){
+  $('.showInitial').click(function(){
+    $('.initialLoad').slideDown('slow', function(){
+
+    })
+  })
+}
+

@@ -3,3 +3,17 @@
   width:100%;
   border-top: 1px solid #000;
 }
+
+.loadTime{
+  font-size:230px;
+  color:#000;
+  opacity:0.90;
+}
+
+.quote {
+  margin-right:10px;
+  width:600px;
+  color:#cd0a0a;
+  opacity:0.90;
+}
+

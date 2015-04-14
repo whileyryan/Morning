@@ -2,6 +2,7 @@ class Index < ActiveRecord::Base
   
   def self.getWeather
     weather = HTTParty.get('http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,usa')
+    p weather
     main = weather['weather'][0]['main']
     temp = weather['main']['temp']
     tempF = ((9/5)*(temp-273)+32).round(1)

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  
   setUserTime();
   setInterval(function(){ 
     setUserTime();
@@ -13,4 +14,6 @@ function setUserTime(){
   $('.time').empty();
   $('.time').append(time);
 }
+
+
 
